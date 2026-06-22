@@ -129,7 +129,7 @@ jobs:
         if: matrix.build_type == 'Release' && matrix.arch != 'win64_msvc2022_arm64_cross_compiled'
         uses: ./.github/actions/verify-executable
         with:
-          binary-path: ${{ runner.temp }}/build/${{ matrix.build_type }}/QGroundControl.exe
+          binary-path: ${{ runner.temp }}/build/${{ matrix.build_type }}/IndiFloGroundControl.exe
           type: exe
           build-dir: ${{ runner.temp }}/build
 
@@ -152,9 +152,9 @@ jobs:
           $installDir = "${{ runner.temp }}\qgc-install-test"
           Write-Host "Installing $($installerExe.Name) to $installDir"
           Start-Process -FilePath $installerExe.FullName -ArgumentList "/S", "/D=$installDir" -Wait -NoNewWindow
-          $binary = Join-Path $installDir "bin\QGroundControl.exe"
+          $binary = Join-Path $installDir "bin\IndiFloGroundControl.exe"
           if (-not (Test-Path $binary)) {
-            Write-Error "QGroundControl.exe not found at $binary after install"
+            Write-Error "IndiFloGroundControl.exe not found at $binary after install"
             Get-ChildItem -Path $installDir -Recurse | Select-Object FullName
             exit 1
           }
@@ -187,7 +187,7 @@ jobs:
         env:
           PATH: ${{ env.QGC_VERIFY_INSTALLED_PATH }}
         with:
-          binary-path: ${{ runner.temp }}\qgc-install-test\bin\QGroundControl.exe
+          binary-path: ${{ runner.temp }}\qgc-install-test\bin\IndiFloGroundControl.exe
           type: exe
 
       - name: Attest and Upload
