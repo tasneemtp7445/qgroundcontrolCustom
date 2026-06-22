@@ -55,19 +55,19 @@ jobs:
             os: windows-2022
             host: windows
             arch: win64_msvc2022_64
-            package: QGroundControl-installer-AMD64
+            package: IndiFloGroundControl-installer-AMD64
 
           - variant: arm64
             os: windows-11-arm
             host: windows_arm64
             arch: win64_msvc2022_arm64
-            package: QGroundControl-installer-ARM64
+            package: IndiFloGroundControl-installer-ARM64
 
           - variant: arm64-cross
             os: windows-2022
             host: windows
             arch: win64_msvc2022_arm64_cross_compiled
-            package: QGroundControl-installer-AMD64-ARM64
+            package: IndiGroundControl-installer-AMD64-ARM64
             aqt_source: 'git+https://github.com/miurahr/aqtinstall.git@c84e1470349e5bedbeee977bd62ec495d50d65b6'
 
     defaults:
