@@ -123,11 +123,14 @@ jobs:
       - name: Build
         working-directory: ${{ runner.temp }}\shadow_build_dir
         run: cmake --build . --target all --config ${{ matrix.BuildType }}
+         -  name: List Release Folder
+  working-directory: ${{ runner.temp }}\shadow_build_dir\Release
+  run: dir
 
       - name: Sanity check release excecutable
         if: matrix.BuildType == 'Release'
         working-directory: ${{ runner.temp }}\shadow_build_dir\Release
-        run: QGroundControl.exe --simple-boot-test
+        run: TasneemGroundControl.exe --simple-boot-test
 
       - name: Install
         working-directory: ${{ runner.temp }}\shadow_build_dir
