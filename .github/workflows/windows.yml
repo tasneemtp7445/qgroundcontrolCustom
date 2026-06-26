@@ -137,6 +137,10 @@ jobs:
         working-directory: ${{ runner.temp }}\shadow_build_dir
         run: cmake --install . --config ${{ matrix.BuildType }}
 
+      - name: Create Installer
+        working-directory: ${{ runner.temp }}\shadow_build_dir
+        run: cmake --build . --target package --config ${{ matrix.BuildType }}
+
       - name: List Build Folder
         working-directory: ${{ runner.temp }}/shadow_build_dir
         run: dir /s
