@@ -178,5 +178,23 @@ Item {
             id:                     viewer3DWindow
             anchors.fill:           parent
         }
+        // Tasneem Watermark
+        Text {
+            id: tasneemWatermark
+
+            text: "© Tasneem Ground Control - Confidential"
+
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+
+            anchors.leftMargin: 20
+            anchors.bottomMargin: 20
+
+            color: "#80FFFFFF"      // Semi-transparent white
+            font.pixelSize: 18
+            font.bold: true
+
+            z: 9999
+        }
     }
 }

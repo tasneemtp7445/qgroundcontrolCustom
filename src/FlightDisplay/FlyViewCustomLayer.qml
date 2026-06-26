@@ -52,4 +52,23 @@ Item {
         bottomEdgeCenterInset:  parentToolInsets.bottomEdgeCenterInset
         bottomEdgeRightInset:   parentToolInsets.bottomEdgeRightInset
     }
+    // ===========================
+    // TasneemGCS Watermark
+    // ===========================
+
+    Rectangle {
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 20
+        anchors.bottomMargin: 20
+
+        color: "#00000000"     // Transparent background
+
+        Text {
+            text: "© Tasneem Ground Control-Confidential"
+            color: "#80FFFFFF"     // Semi-transparent white
+            font.pixelSize: 18
+            font.bold: true
+        }
+    }
 }

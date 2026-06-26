@@ -219,7 +219,7 @@ GPSBaseStationSupport *GPSProvider::_connectGPS()
         gpsDriver = new GPSDriverSBF(&_callbackEntry, this, &_sensorGps, &_satelliteInfo, kGPSHeadingOffset);
         baudrate = 0;
         break;
-    case GPSType::u_blox:{
+    case GPSType::u_blox:
         GPSDriverUBX::Settings settings{};
 
     gpsDriver = new GPSDriverUBX(
@@ -229,7 +229,7 @@ GPSBaseStationSupport *GPSProvider::_connectGPS()
     &_sensorGps,
     &_satelliteInfo,
     settings);
-        break; }
+        break;
     case GPSType::femto:
         gpsDriver = new GPSDriverFemto(&_callbackEntry, this, &_sensorGps, &_satelliteInfo);
         baudrate = 0;
