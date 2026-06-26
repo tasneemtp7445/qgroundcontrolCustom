@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - 'Stable*'
+      - tasneem-v5.0.8
     tags:
       - 'v*'
     paths-ignore:
