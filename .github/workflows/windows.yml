@@ -126,7 +126,7 @@ jobs:
 
       - name: List Release Folder
         working-directory: ${{ runner.temp }}\shadow_build_dir\Release
-         run: dir
+        run: dir
 
       - name: Sanity check release excecutable
         if: matrix.BuildType == 'Release'
