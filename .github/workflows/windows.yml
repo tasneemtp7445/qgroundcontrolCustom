@@ -123,9 +123,10 @@ jobs:
       - name: Build
         working-directory: ${{ runner.temp }}\shadow_build_dir
         run: cmake --build . --target all --config ${{ matrix.BuildType }}
-         -  name: List Release Folder
-  working-directory: ${{ runner.temp }}\shadow_build_dir\Release
-  run: dir
+
+      - name: List Release Folder
+        working-directory: ${{ runner.temp }}\shadow_build_dir\Release
+         run: dir
 
       - name: Sanity check release excecutable
         if: matrix.BuildType == 'Release'
